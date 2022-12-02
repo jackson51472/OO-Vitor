@@ -14,6 +14,7 @@ public class Endereco {
         this.numeroCasa = numeroCasa;
         this.cidade = cidade;
         this.uf = uf;
+        this.complemento = complemento;
     }
 
     public String getCep() {
