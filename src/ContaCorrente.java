@@ -1,16 +1,8 @@
-public class ContaCorrente {
-
+public class ContaCorrente extends Conta {
     private Double limite;
-    private Double saldo;
 
-    public void calcularSaldo(){
-
-        System.out.println("Valor em caixa;" + getSaldo());
-
-    }
-
-    public void depositar(String numeroConta, Double valor){
-        
+    public ContaCorrente(String numero, Double valorCaixa) {
+        super(numero, valorCaixa);
     }
 
     public Double getLimite() {
@@ -21,11 +13,22 @@ public class ContaCorrente {
         this.limite = limite;
     }
 
-    public Double getSaldo() {
-        return saldo;
-    }
+    public Object[] transferir (Conta contaAlvo, Conta contaEnviadora, Double valorTransferido ){
 
-    public void setSaldo(Double saldo) {
-        this.saldo = saldo;
+        if (valorTransferido > contaEnviadora.getValorCaixa()){
+            System.out.println("Conta número "+ getNumero() +" Sem saldo");
+        }
+        else {
+            Double valorDois = valorTransferido;
+
+            valorDois += contaAlvo.getValorCaixa();
+            contaAlvo.setValorCaixa(valorDois);
+
+            contaEnviadora.setValorCaixa(getValorCaixa() - valorTransferido);
+        }
+
+        Object[] o = {contaAlvo , contaEnviadora};
+
+        return o;
     }
 }
