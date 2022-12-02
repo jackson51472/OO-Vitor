@@ -1,43 +1,47 @@
 public abstract class Conta {
+    private String numero;
+    private Double valorCaixa;
 
-    private String numeroConta;
+    private Credito credito;
+    private Debito debito;
 
-    public String getNumeroConta() {
-        return numeroConta;
+    public  Conta(String numero, Double valorCaixa){
+        this.setNumero(numero);
+        this.setValorCaixa(valorCaixa);
     }
 
-    public void setNumeroConta(String numeroConta) {
-        this.numeroConta = numeroConta;
+    public Double depositar(Double valor){
+
+        this.valorCaixa += valor;
+
+        return this.valorCaixa;
     }
 
-    public class Debito{
-        private Double valor;
+    public Double sacar(Double valor){
 
-        public Double getValor() {
-            return valor;
-        }
+        if (valor > this.valorCaixa || valor > this.valorCaixa){
+            System.out.println("Você não tem esse saldo:");
+            return this.valorCaixa;
+        }else
+            valorCaixa -= valor;
+            return  this.valorCaixa;
 
-        public void setValor(Double valor) {
-            this.valor = valor;
-        }
     }
 
-    public class Credito{
-        private Double valor;
 
-        public Double getValor() {
-            return valor;
-        }
-
-        public void setValor(Double valor) {
-            this.valor = valor;
-        }
+    public String getNumero() {
+        return numero;
     }
 
-    public Double depositar(Double valorDepositado, String numeroconta){
-
-
-        return null;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
+    public Double getValorCaixa() {
+        return valorCaixa;
+    }
+
+    public void setValorCaixa(Double valorCaixa) {
+        this.valorCaixa = valorCaixa;
+    }
 }
