@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Endereco {
     private String cep;
     private String logradouro;
