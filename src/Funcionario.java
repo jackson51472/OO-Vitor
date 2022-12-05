@@ -1,11 +1,7 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.InputMismatchException;
-
 public class Funcionario extends Pessoa implements IUser {
 
     private Double salario;
-    private Collection<Funcionario> funcs = new ArrayList<Funcionario>();
+    private CargoFuncionario funcs;
 
     public Funcionario(String cpf, String nome, String telefone) {
         super(cpf, nome, telefone);
@@ -29,11 +25,11 @@ public class Funcionario extends Pessoa implements IUser {
 
     }
 
-    public Collection<Funcionario> getFuncs() {
+    public CargoFuncionario getFuncs() {
         return funcs;
     }
 
-    public void setFuncs(Collection<Funcionario> funcs) {
+    public void setFuncs(CargoFuncionario funcs) {
         this.funcs = funcs;
     }
 
