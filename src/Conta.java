@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.Collection;
+
 public abstract class Conta {
     private String numero;
     private Double valorCaixa;
 
-    private Credito credito;
-    private Debito debito;
+    public Collection<Credito> credito = new ArrayList<Credito>();
+    public Collection<Debito> debito = new ArrayList<Debito>();
 
     public  Conta(String numero, Double valorCaixa){
         this.setNumero(numero);
@@ -19,10 +22,10 @@ public abstract class Conta {
 
     public Double sacar(Double valor){
 
-        if (valor > this.valorCaixa || valor > this.valorCaixa){
+        if (valor > this.valorCaixa){
             System.out.println("Você não tem esse saldo:");
             return this.valorCaixa;
-        }else
+        }
             valorCaixa -= valor;
             return  this.valorCaixa;
 
@@ -43,5 +46,24 @@ public abstract class Conta {
 
     public void setValorCaixa(Double valorCaixa) {
         this.valorCaixa = valorCaixa;
+    }
+
+    public Object[] transferir (Conta contaAlvo, Conta contaEnviadora, Double valorTransferido ){
+
+        if (valorTransferido > contaEnviadora.getValorCaixa()){
+            System.out.println("Conta número "+ getNumero() +" Sem saldo");
+        }
+        else {
+            Double valorDois = valorTransferido;
+
+            valorDois += contaAlvo.getValorCaixa();
+            contaAlvo.setValorCaixa(valorDois);
+
+            contaEnviadora.setValorCaixa(getValorCaixa() - valorTransferido);
+        }
+
+        Object[] o = {contaAlvo , contaEnviadora};
+
+        return o;
     }
 }
