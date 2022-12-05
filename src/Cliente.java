@@ -1,13 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.InputMismatchException;
-import java.util.List;
 
 public class Cliente extends Pessoa implements  IUser {
 
     private Boolean vip;
     private Collection<Cliente> clientes = new ArrayList<Cliente>();
-    public ArrayList<Endereco> listaEndereco = new ArrayList<Endereco>();
+    public Collection<Endereco> listaEndereco = new ArrayList<Endereco>();
     public Collection<Conta> listaConta = new ArrayList<Conta>();
 
     public Cliente(String cpf, String nome, String telefone) {
@@ -25,14 +23,6 @@ public class Cliente extends Pessoa implements  IUser {
         this.vip = vip;
     }
 
-    public List<Endereco> getListaEndereco(ArrayList<Endereco> listaEndereco) {
-        return listaEndereco;
-    }
-
-    public void setListaEndereco(ArrayList<Endereco> listaEndereco) {
-        this.listaEndereco = listaEndereco;
-    }
-
 
     public void retornaValidacao(){
         if (this.autenticar() == Boolean.FALSE){
@@ -45,5 +35,16 @@ public class Cliente extends Pessoa implements  IUser {
     @Override
     public Boolean autenticar() {
         return  true;
+    }
+
+        public void imprimirEndereco(Cliente e) {
+
+        Collection<Endereco> enderecoCliente = e.listaEndereco;
+
+        for (Endereco i : enderecoCliente){
+
+            System.out.println("Funcionario "+ e.getNome() +" mora na Cidade: " + i.getCidade() + " CEP: " + i.getCep());
+
+        }
     }
 }
