@@ -4,8 +4,15 @@ public class CargoFuncionario {
 
     public CargoFuncionario(String cargo){
 
-        this.nomeCargo = cargo;
+        this.setNomeCargo(cargo);
 
     }
 
+    public String getNomeCargo() {
+        return nomeCargo;
+    }
+
+    public void setNomeCargo(String nomeCargo) {
+        this.nomeCargo = nomeCargo;
+    }
 }
