@@ -1,7 +1,7 @@
 public class Funcionario extends Pessoa implements IUser {
 
     private Double salario;
-    private CargoFuncionario funcs;
+    private CargoFuncionario cargo;
 
     public Funcionario(String cpf, String nome, String telefone) {
         super(cpf, nome, telefone);
@@ -25,12 +25,12 @@ public class Funcionario extends Pessoa implements IUser {
 
     }
 
-    public CargoFuncionario getFuncs() {
-        return funcs;
+    public CargoFuncionario getCargo() {
+        return cargo;
     }
 
-    public void setFuncs(CargoFuncionario funcs) {
-        this.funcs = funcs;
+    public void setCargo(CargoFuncionario cargo) {
+        this.cargo = cargo;
     }
 
     @Override
