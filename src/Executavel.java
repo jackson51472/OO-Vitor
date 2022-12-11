@@ -1,5 +1,5 @@
 public class Executavel {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         Endereco e1 = new Endereco("1","Rua A","1", "Caixa", "Paiva", "ff");
         Endereco e2 = new Endereco("2","Rua B","2", "Caixa", "Paiva", "ff");
@@ -91,5 +91,5 @@ public class Executavel {
         c1.imprimirEndereco(c1);
         c2.imprimirEndereco(c2);
 
-    }
+    }*/
 }
