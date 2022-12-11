@@ -13,8 +13,6 @@ public class Cliente extends Pessoa implements  IUser {
     }
 
 
-
-
     public Boolean getVip() {
         return vip;
     }
@@ -37,14 +35,14 @@ public class Cliente extends Pessoa implements  IUser {
         return  true;
     }
 
-        public void imprimirEndereco(Cliente e) {
+    public void imprimirEndereco(Cliente e) {
 
-        Collection<Endereco> enderecoCliente = e.listaEndereco;
+    Collection<Endereco> enderecoCliente = e.listaEndereco;
 
-        for (Endereco i : enderecoCliente){
+    for (Endereco i : enderecoCliente){
 
-            System.out.println("Funcionario "+ e.getNome() +" mora na Cidade: " + i.getCidade() + " CEP: " + i.getCep());
+        System.out.println("Cliente "+ e.getNome() +", tem residência na cidade de: " + i.getCidade() + " // Rua: " + i.getLogradouro() + " // Número da residência: " + i.getNumeroCasa());
 
-        }
+    }
     }
 }
