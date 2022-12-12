@@ -20,7 +20,6 @@ public class ContaCorrente extends Conta {
         Double total = 0.0;
 
 
-
         for (Credito e : credito){
             total += e.getValor();
         }
@@ -29,9 +28,6 @@ public class ContaCorrente extends Conta {
             total -= e.getValor();
 
         }
-
-        total += conta.getValorCaixa();
-
 
         return total + conta.limite;
     }
