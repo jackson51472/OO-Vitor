@@ -15,7 +15,10 @@ public class Aplicacao4 {
         conp.depositar(cred2.getValor());
         conp.credito.add(cred2);
 
-        conc1.transferir(conp,conc1,5000.);
+
+        Debito trans = new Debito(500.);
+        conc1.debito.add(trans);
+        conc1.transferir(conp,conc1,trans.getValor());
 
         System.out.println("Conta número " + conc1.getNumero() + " Tem o Saldo de : R$" + conc1.calcularSaldo(conc1) + ", ja está com limite de: R$" + conc1.getLimite());
         System.out.println("Conta número " + conp.getNumero() + " Tem o Saldo de : R$" + conp.calcularSaldo(conp) + ", é tem uma rentabilidade mensal de: " + conp.getRentabilidadeMensal());
